@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sare - Safe at Rest Encryption</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+            background-color: #000;
+            width: 1px;
+            height: 100px;
+            animation: moveLine linear infinite;
+        }
+
+        @keyframes moveLine {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .container {
+            font-family: monospace;
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 28px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+        .container img {
+            width: 90%; 
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .navbar a {
+            color: #fff;
+            background-color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 2px solid #000;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .navbar a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="sare.svg">
+
+        <p>A Qunatum-Safe Encryption at Rest Tool</p>
+        <div class="navbar">
+            <a href="https://Github.com/SareProject">Github</a>
+            <a href="https://SareProject.github.io/docs">Docs</a>
+            <a href="https://SareProject.github.io/docs/donation">Support</a>
+        </div>
+    </div>
+
+    <script>
+        const numLines = 50;
+        const body = document.body;
+
+        for (let i = 0; i < numLines; i++) {
+            const line = document.createElement('div');
+            line.classList.add('line');
+            line.style.left = `${Math.random() * 100}vw`;
+            line.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            line.style.animationDelay = '0.01s';
+            body.appendChild(line);
+        }
+    </script>
+</body>
+</html>
